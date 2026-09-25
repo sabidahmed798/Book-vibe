@@ -1,10 +1,14 @@
+import BookCard from "@/components/shared/BookCard";
 import { IBook } from "@/types/books.type";
-import BookCard from "../shared/BookCard";
 
 const getBooks = async () => {
-  const response = await fetch("http://localhost:3000/booksData.json");
-  const data = await response.json();
-  return data;
+  const res = await fetch("http://localhost:3000/booksData.json");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch books data");
+  }
+
+  return res.json();
 };
 
 const Books = async () => {
@@ -18,7 +22,7 @@ const Books = async () => {
         </p>
 
         <h2 className="text-3xl font-bold ☐ text-slate-800 md:text-4x1">
-          Explore Popular Books
+          Explore All Books
         </h2>
         <p className="mx-auto mt-3 max-w-2x1 text-slate-500">
           Discover amazing stories, timeless classics, and inspiring books from
@@ -27,8 +31,8 @@ const Books = async () => {
       </div>
 
       {/* Books Grid */}
-      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-        {booksData.slice(0, 9).map((book: IBook, ind: number) => {
+      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {booksData.map((book: IBook, ind: number) => {
           return <BookCard key={ind} book={book} />;
         })}
       </div>

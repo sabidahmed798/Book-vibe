@@ -4,9 +4,10 @@ import React from "react";
 import logo from "../../assets/book.png";
 
 import Image from "next/image";
+import Link from "next/link";
 const Navber = () => {
   return (
-    <nav className=" bg-base-100 shadow-lg ">
+    <nav className=" bg-base-100 shadow-lg">
       <div className="navbar rounded-2xl container mx-auto px-4">
         <div className="navbar-start">
           <div className="dropdown">
@@ -60,21 +61,12 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              {/* <Link href="/books">Books</Link> */}
+              <Link href="/books">Books</Link>
+
+              <Link href="/books/listed-books">Listed Books</Link>
             </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2 bg-base-100 w-40 z-1">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
+
             <li>
               <a>Item 3</a>
             </li>
