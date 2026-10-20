@@ -14,10 +14,17 @@ const ReadButton = ({ book }: { book: IBook }) => {
   };
 
   return (
-    <button className="btn btn-primary flex-1" onClick={() => handleReadBook()}>
+    <button className="btn btn-primary " onClick={() => handleReadBook()}>
       Read
     </button>
   );
 };
 
 export default ReadButton;
+
+{
+  /* <div className="bg-white p-6">
+  <button className="btn btn-neutral btn-outline">Outline</button>
+  <button className="btn btn-neutral btn-dash">Dash</button>
+</div> */
+}

@@ -53,14 +53,13 @@ const Navber = () => {
             </ul>
           </div>
           <div className=" flex gap-2 items-center">
-            <a>Book Vibe</a>
-
             <Image src={logo} width={50} height={50} alt="" />
+            <a>Book Vibe</a>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li className="grid grid-cols-3 items-center ">
               {/* <Link href="/books">Books</Link> */}
               <Link href="/books">Books</Link>
 
